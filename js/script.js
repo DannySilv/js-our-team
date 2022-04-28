@@ -50,5 +50,40 @@ for (let i = 0; i < team.length; i++) {
 }
 
 // MILESTONE 2
+const teamContainer = document.querySelector(".team-container");
+teamContainer.innerHTML = "";
+console.log(teamContainer);
+
+for (let i = 0; i < team.length; i++) {
+    const thisMember = team[i];
+    const domElement = genCard(thisMember);
+    teamContainer.append(domElement);
+}
 
 
+
+// DOM FUNCTION - CARD-GENERATOR
+/**
+ * Description -> It generates the Card HTML element (For MILESTONE 2)
+ * @param {any} teamMember -> The team member for which we are generating a card
+ * @returns {any} -> HTML element
+ */
+ function genCard(teamMember) {
+    const genCard = document.createElement("div");
+
+    genCard.innerHTML = 
+    `<div class="card-image">
+    <img
+      src="img/${teamMember.image}"
+      alt="${teamMember.name}"
+    />
+    </div>
+    <div class="card-text">
+        <h3>${teamMember.name}</h3>
+        <p>${teamMember.role}</p>
+    </div>`
+
+    genCard.classList.add("team-card");
+
+    return genCard;
+}
