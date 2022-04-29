@@ -63,17 +63,16 @@ for (let i = 0; i < team.length; i++) {
 }
 
 // BONUS 3
-document.getElementById("addMemberButton").addEventListener("click", genNewMember(teamContainer))
+document.getElementById("addMemberButton").addEventListener("click", genNewMember)
 
 //FUNCTIONS
 
 // FUNCTION 1 - NEW-MEMBER-GENERATOR
 /**
  * Description -> It generates an object and push it in the team array, then it generates a new card for it and append it to HTML element 
- * @param {any} container -> The container in which we are generating a card
  * @returns {any} -> New Member object and its card
  */
-function genNewMember(container) {
+function genNewMember() {
     const newMemberName = document.getElementById("name").value
     const newMemberRole = document.getElementById("role").value
     const newMemberImage = document.getElementById("image").value
@@ -88,7 +87,7 @@ function genNewMember(container) {
     team.push(newMember);
 
     const newMemberDom = genCard(newMember);
-    container.append(newMemberDom)
+    teamContainer.append(newMemberDom)
 }
 
 // DOM FUNCTION - CARD-GENERATOR
