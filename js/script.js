@@ -47,6 +47,9 @@ const team = [
 for (let i = 0; i < team.length; i++) {
     const teamMember = team[i];
     console.log(teamMember.name, teamMember);
+    console.log("name", teamMember.name);
+    console.log("role", teamMember.role);
+    console.log("image", teamMember.image);
 }
 
 // MILESTONE 2 + BONUS 1&2
@@ -99,10 +102,10 @@ function genNewMember() {
 
     genCard.innerHTML = 
     `<div class="card-image">
-    <img
-      src="img/${teamMember.image}"
-      alt="${teamMember.name}"
-    />
+        <img
+        src="img/${teamMember.image}"
+        alt="${teamMember.name}"
+        />
     </div>
     <div class="card-text">
         <h3>${teamMember.name}</h3>
